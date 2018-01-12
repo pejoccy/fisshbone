@@ -14,14 +14,15 @@ function formatPlayer(array $players) {
 
 function formatProfile(array $profiles, $profile_format) {
     // use default format if none is selected
-    $format = "%key: %value\n";
+    $format = "%s: %s\n";
     $formatted = "";
     if (!empty($profile_format)) {
         $format = $profile_format;
     }
-    array_map($profiles, function($key, $value) use (&$formatted, $format) {
+    array_walk($profiles, function($value, $key) use (&$formatted, $format) {
         $formatted = printf($format, $key, $value);
     });
     return $formatted;
 }
+
 
