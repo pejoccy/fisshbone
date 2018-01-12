@@ -10,8 +10,9 @@ function executeMaxJobs(array $tasks, $time_allowed) {
     foreach ($tasks as $job_time) {
         $remaining_time -= $job_time;
         if ($remaining_time < 0) {
-            return $jobs_done;
+            break;
         }
         $jobs_done++;
     }
+    return $jobs_done;
 }
