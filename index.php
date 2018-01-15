@@ -3,9 +3,11 @@
 include './src/executeMaxJobs.php';
 include './src/printProfiles.php';
 
+// Task 1
+$time = 12;
 $A = [7, 6, 5, 3, 4, 2, 1];
 
-
+// Task 2
 $players[] = [
  "Name" => "Ronaldo", 
  "Age" => 31, 
@@ -30,4 +32,8 @@ $players[] = [
  "Country" => "England",
  "Team" => "Man United"
 ];
-var_dump(formatPlayer($players)); exit;
+
+
+// ==== SOLUTIONS ====
+print("<p>== WORK DONE ==<br>" . executeMaxJobs($A, $time));
+print("<p>== PLAYER PROFILE INFO ==<br>" . formatPlayer($players));
